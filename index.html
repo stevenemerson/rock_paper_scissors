@@ -5,11 +5,57 @@
 </head>
 <body>
 	<script>
-		playerSelection = promt('rock', 'paper', 'scissors')
-		function playRound(playerSelection, computerSelection);
-			return playerSelection
-		console.log(playerSelection)
+	   function computerPlay() {
+	          let answer = Math.floor(Math.random()*3);
 
+	          switch (answer){
+	              case 0:
+	              return 'rock';
+	              break;
+
+	              case 1: 
+	              return 'paper';
+	              break;
+
+	              case 2: 
+	              return 'scissors';
+	              break;
+	            }
+	    }
+	        // One round played
+	        function oneRound(playerSelection, computerSelection) {
+	  
+	          if (playerSelection == 'rock' && computerSelection == 'paper'){
+	            alert("You lose! Paper beats rock!")
+	            
+	            } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+	                alert('You win! Paper beats rock!')
+	              
+	            } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
+	                alert("You lose! Scissors beat paper!")
+	              
+	            } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
+	                alert('You win! Scissors beat paper!')
+	              
+	            } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
+	                alert("You lose! Rock beats Scissors!")
+	              
+	            } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
+	                alert("You win! Rock beats paper!")
+	              
+	            } else if (playerSelection == ''){
+	                alert("Let's play next time.")
+	              / / Alert when the game is a tie
+	            }else if (playerSelection == computerSelection) {
+	            alert("It's a tie!")
+	           / / Inputs anything besides 'rock', 'paper' or 'scissors'
+	            } else {
+	              alert("Input again.")
+	            }
+	        }
+	        let playerSelection = prompt('Rock, Paper, Scissors?').toLowerCase();
+	        const computerSelection = computerPlay();
+	        oneRound(playerSelection, computerSelection);
 	</script> 
 </body>
 </html>
